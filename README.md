@@ -12,14 +12,12 @@ pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable
 
 ## Reproducing Results
 
-Please download the checkpoints, and take note of where the checkpoints are.
-
-Moreover, please download the pre-clipped test-sets as well. (This way, we won't have headaches about file structure.)
+Please download the checkpoints [link](https://drive.google.com/file/d/1UeJLcp3riu5MiB0mgQ-vS4zI3yCoqY62/view?usp=sharing) and the "reproduction kit" which contains parts of the dataset we used [link](https://drive.google.com/file/d/1-cXl2RSreqYQLv-yNLaDnsa3eKEiC1hJ/view?usp=sharing). We used only one split of each dataset and down-sampled them, so it is strongly recommended that you download them. After downloading, place the reproduction kit in `data`.
 
 For DDD and 1dB(voicebank-demand):
 ```
 python infer_gan.py \
-  +noisy_dir=(directory with dataset)/vbdm-clipped/clipped_1dB \
+  +noisy_dir=data/vbdm/clipped_1dB \
   +noisy_json= \
   +load_from=(directory with models)/hifigan_bs2/checkpoint.th \
   +out_dir=inferred/1dB/hifigan_bs2 \
@@ -30,7 +28,7 @@ python infer_gan.py \
 For DD:
 ```
 python infer_vanilla.py \
-  +noisy_dir=(directory with dataset)/vbdm-clipped/clipped_1dB \
+  +noisy_dir=data/vbdm/clipped_1dB \
   +noisy_json= \
   +load_from=(directory with models)/shift_only_adamw/checkpoint.th \
   +out_dir=inferred/1dB/shift_only_adamw \
@@ -41,7 +39,7 @@ python infer_vanilla.py \
 For T-Unet:
 ```
 python infer_vanilla.py \
-  +noisy_dir=(directory with dataset)/vbdm-clipped/16384_clipped_1dB \
+  +noisy_dir=data/vbdm/16384_clipped_1dB \
   +noisy_json= \
   +load_from=(directory with models)/realbaseline/checkpoint.th \
   +out_dir=inferred/1dB/realbaseline \
@@ -57,18 +55,16 @@ Modify the scripts as necessary. Alternatively, please look at the `runinfer_in_
 
 Step 1: Download the Voicebank-DEMAND dataset and decompress it. Delete the noisy split. Resample all to 16kHz. In a separate directory, clip the clean speech from the test set so that they have a SNR of 3dB. 
 
-Alternatively, I have prepared a reproduction kit where all of this is already done for you. Let the path to these samples be `DATA`.
+Alternatively, I have prepared a reproduction kit where all of this is already done for you.
 
-
-
-Step 2: Run the following
+Step 2: 
 ```
-noisy_train=$DATA/clean_trainset_wav
-clean_train=$DATA/clean_trainset_wav
-noisy_test=$DATA/clipped_3dB
-clean_test=$DATA/clean_testset_wav
-noisy_dev=$DATA/clean_testset_wav
-clean_dev=$DATA/clean_testset_wav
+noisy_train=data/clean_trainset_wav
+clean_train=data/clean_trainset_wav
+noisy_test=data/clipped_3dB
+clean_test=data/clean_testset_wav
+noisy_dev=data/clean_testset_wav
+clean_dev=data/clean_testset_wav
 
 mkdir -p egs/vbdm_clip/tr
 mkdir -p egs/vbdm_clip/cv
@@ -83,7 +79,7 @@ python make_egs.py $clean_dev > egs/vbdm_clip/cv/clean.json
 
 ```
 
-Confirm that the resulting json files are nonempty.
+Confirm that the resulting json files are nonempty, and each entry contains the absolute path of the speech samples.
 
 Step 3: run the script.
 
