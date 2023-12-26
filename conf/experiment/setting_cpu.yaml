@@ -1,0 +1,17 @@
+output_path: 1_output
+
+epochs: 75
+batch_size:
+  tr: 32
+  cv: 1
+  ts: 1
+logging: 10 # how many for each epoch?
+eval_every: 1 # evaluate metrics every _ epochs
+save_every: 50 # save model every _ epochs
+num_prints: 10
+history_file: history.json
+continue_pretrained: False
+
+device: cpu
+num_workers: 1
+dry: 0.

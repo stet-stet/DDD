@@ -1,0 +1,11 @@
+numpy 
+scipy 
+hydra-core 
+julius 
+pesq 
+pystoi
+librosa
+soundfile
+tqdm
+torch==1.7.1+cu110
+torchaudio==0.7.2

@@ -1,0 +1,4 @@
+name: MultiResolutionSTFTL1Loss
+parameters:
+ factor_sc: .4
+ factor_mag: .4

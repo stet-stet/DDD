@@ -1,0 +1,6 @@
+name: ClippedCleanSet
+parameters:
+ sample_rate: 16000
+ segment: 2.0
+ stride: 0.5
+ pad: true # if sample too short, pad it

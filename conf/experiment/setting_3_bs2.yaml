@@ -1,0 +1,17 @@
+output_path: hifigan_bs2
+
+epochs: 75
+batch_size:
+  tr: 2
+  cv: 1
+  ts: 1
+logging: 100 # how many for each epoch?
+eval_every: 1 # evaluate metrics every _ epochs
+save_every: 10 # save model every _ epochs
+num_prints: 30
+history_file: history.json
+continue_pretrained: False
+
+device: cuda
+num_workers: 5
+dry: 0.

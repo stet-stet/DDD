@@ -1,0 +1,15 @@
+name: demucs
+parameters:
+ causal: True
+ chin: 1
+ chout: 1
+ hidden: 64
+ max_hidden: 10000
+ glu: True
+ depth: 5
+ kernel_size: 8
+ stride: 4
+ normalize: True
+ resample: 4
+ growth: 2
+ rescale: 0.1

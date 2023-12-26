@@ -1,0 +1,17 @@
+output_path: shift_only_adamw
+
+epochs: 75
+batch_size:
+  tr: 8
+  cv: 1
+  ts: 1
+logging: 10 # how many for each epoch?
+eval_every: 1 # evaluate metrics every _ epochs
+save_every: 50 # save model every _ epochs
+num_prints: 500
+history_file: history.json
+continue_pretrained: False
+
+device: cuda
+num_workers: 5
+dry: 0.

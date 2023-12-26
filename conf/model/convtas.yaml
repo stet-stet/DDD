@@ -1,0 +1,4 @@
+name: convtasnet
+parameters:
+ causal: True
+ norm: cln
