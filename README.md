@@ -10,6 +10,10 @@ Make a python 3.8 venv, and then:
 pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable.html --no-cache-dir
 ```
 
+## Generated Samples
+
+Genereated Samples are available [here](https://drive.google.com/file/d/1b3Id8LVFHVhs5SpxI9emvUOt3ofbDHIz/view?usp=sharing). As outlined on the paper, these samples were all normalized with pyloudnorm to -27 LUFS before they could be used in subjective testing.
+
 ## Reproducing Results
 
 Please download the checkpoints [link](https://drive.google.com/file/d/1UeJLcp3riu5MiB0mgQ-vS4zI3yCoqY62/view?usp=sharing) and the "reproduction kit" which contains parts of the dataset we used [link](https://drive.google.com/file/d/1-cXl2RSreqYQLv-yNLaDnsa3eKEiC1hJ/view?usp=sharing). We used only one split of each dataset and down-sampled them, so it is strongly recommended that you download them. After downloading, place the reproduction kit in `data`.
