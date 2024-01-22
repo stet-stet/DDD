@@ -14,6 +14,8 @@ pip install -r requirements.txt -f https://download.pytorch.org/whl/torch_stable
 
 Genereated Samples are available [here](https://drive.google.com/file/d/1b3Id8LVFHVhs5SpxI9emvUOt3ofbDHIz/view?usp=sharing). As outlined on the paper, these samples were all normalized with pyloudnorm to -27 LUFS before they could be used in subjective testing.
 
+Alternatively, you can listen to some samples [on our demo page](https://stet-stet.github.io/DDD/). The audio on this website has been normalized to -27 LUFS. (All normalization was done with [pyloudnorm](https://github.com/csteinmetz1/pyloudnorm). Awesome package!)
+
 ## Reproducing Results
 
 Please download the checkpoints [link](https://drive.google.com/file/d/1UeJLcp3riu5MiB0mgQ-vS4zI3yCoqY62/view?usp=sharing) and the "reproduction kit" which contains parts of the dataset we used [link](https://drive.google.com/file/d/1-cXl2RSreqYQLv-yNLaDnsa3eKEiC1hJ/view?usp=sharing). We used only one split of each dataset and down-sampled them, so it is strongly recommended that you download them. After downloading, place the reproduction kit in `data`.
@@ -96,27 +98,5 @@ For T-UNet: `runrealbaseline.sh`.
 ## Acknowledgement
 
 The structure of the code, was heavily inspired by [this](https://github.com/facebookresearch/denoiser) repository, where Demucs is used to perform speech denoising.
-
-## Goals and Features
-
-- each training component is fully modular
-  - ...so that minimal number of files need be modified to run a different experiment
-- a component can be added without much hassle (as long as input/output dimensions match)
-- running an experiment can be done without much hassle
-- easily keep track of which experiments resulted in which file (the logger does this for you!)
-- a code that can be easily inspected even for beginners!
-
-## The main idea
-
-- Hydra shall be used to implement the below.
-- augmentors, loaders, losses, models, optimizers, lr-schedulers are chosen when running file
-- each config outlines:
-  - parameters for each component
-  - (when not specified, parameter defaults to defaults)
-- there is one "selector" function within each folder: this is the only func that needs to be imported
-  - the json parameters will be directly fed into the component constructor!
-- the training function will have to be hand-written for each different experiment
-  - in `experiments/`
-- output folder, logs, etc are automatically generated such that no information goes deleted without a trace
 
 
