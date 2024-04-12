@@ -31,9 +31,10 @@ class TUNet(nn.Module):
     """
     Baseline model for audio declipping, as outlined and used in 
     "Cascaded time+ time-frequency unet for speech enhancement: Jointly addressing clipping, codec distortions, and gaps (ICASSP 2021)".
-    originally thought to be tnet.TNet, the model Went through a slight fix after A. Nair's mail
+    The model architecture was determined to be the below after an e-mail correspondence with Dr. Nair, the first author of above.
+
     the model is a slightly twisted SEGAN.
-    the model operates in 16000Hz, and only takes signals of length 16384 as input
+    the model operates in 16000Hz, and only takes signals of length 16384 as input.
 
     Args: None. configuration is fixed.
     """

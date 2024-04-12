@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
-# Copyright (c) Facebook, Inc. and its affiliates.
-# All rights reserved.
-#
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
+# Adapted from an adaptation of Tomoki Hayashi's code, in https://github.com/facebookresearch/denoiser/
+#   Original code by Tomoki Hayashi, MIT License (https://opensource.org/licenses/MIT)
+#   Adaptation has CC BY-NC 4.0, found in the directory incl_licenses
 
-# Original copyright 2019 Tomoki Hayashi
-#  MIT License (https://opensource.org/licenses/MIT)
 
 """STFT-based Loss modules."""
 

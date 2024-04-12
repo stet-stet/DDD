@@ -95,8 +95,7 @@ For DD: `runmain.sh`.
 
 For T-UNet: `runrealbaseline.sh`.
 
-## Acknowledgement
+## Acknowledgement & Clarification on License
 
-The structure of the code, was heavily inspired by [this](https://github.com/facebookresearch/denoiser) repository, where Demucs is used to perform speech denoising.
-
+The structure of the code, was heavily inspired by [this](https://github.com/facebookresearch/denoiser) repository, where Demucs is used to perform speech denoising. That repo is licensed under CC BY-NC 4.0, included in this repo under the directory `incl_licenses`. While other codes are licensed under MIT, please understand that a large portion of this repo is still under CC BY-NC 4.0 as per the restrictions on the repo I drew from.
 

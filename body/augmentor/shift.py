@@ -1,3 +1,5 @@
+# Adapted from https://github.com/facebookresearch/denoiser/, under CC BY-NC 4.0 license
+#    The corresponding LICENSE can be found on the incl_licenses directory.
 import random
 import torch as th
 

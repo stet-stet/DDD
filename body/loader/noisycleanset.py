@@ -1,9 +1,5 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
-# All rights reserved.
-#
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-# author: adefossez and adiyoss
+# From https://github.com/facebookresearch/denoiser/, under CC BY-NC 4.0 license
+#    The corresponding LICENSE can be found on the incl_licenses directory.
 
 import json
 import logging

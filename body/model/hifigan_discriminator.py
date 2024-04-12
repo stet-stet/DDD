@@ -1,3 +1,6 @@
+# Copied from the Official implementation at https://github.com/jik876
+#     MIT license ((https://opensource.org/licenses/MIT))
+
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
